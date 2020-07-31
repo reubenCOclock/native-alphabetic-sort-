@@ -9,7 +9,7 @@ const alphabetSoup = (str) => {
     wordOrderArray.push(convertIntToLetter(numericalOrderArray[i]));
   }
 
-  return wordOrderArray;
+  return wordOrderArray.join("");
 };
 
 const sortOrderArray = (arr) => {
@@ -23,7 +23,6 @@ const sortOrderArray = (arr) => {
         const splicedIndex = arr[i];
         arr[i] = arr[i + 1];
         arr[i + 1] = splicedIndex;
-        console.log("yes");
       }
 
       if (count == 0) {
@@ -118,6 +117,13 @@ const convertIntToLetter = (int) => {
   }
   if (int == 24) {
     letter = "x";
+  }
+
+  if (int == 25) {
+    letter = "Y";
+  }
+  if (int == 26) {
+    letter = "Z";
   }
 
   return letter;
@@ -220,7 +226,15 @@ const caseLetters = (letter) => {
     order = 24;
   }
 
+  if (letter == "y") {
+    order = 25;
+  }
+
+  if (letter == "z") {
+    order = 26;
+  }
+
   return order;
 };
 
-console.log(alphabetSoup("xavier"));
+console.log(alphabetSoup("bertrand"));
